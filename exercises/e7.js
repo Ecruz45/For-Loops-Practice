@@ -5,7 +5,18 @@
 
 export function getClientWithLeastBalance(array) {
   // Your code goes here...
+  let clients = [];
+  let lowBalance = array[0].balance;
 
+  for (let i =0; i < array.length; i++) {
+   if (!array[i].balance == 0 && array[i].balance < lowBalance) {
+     lowBalance = array[i].balance; 
+     if (array[i].balance === lowBalance) {
+       clients.push(array[i]);
+     }
+     return clients;
+   }
+  }
 }
 
 // === TEST YOURSELF ===
